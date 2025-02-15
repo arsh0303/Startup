@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>arise</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background: linear-gradient(135deg, #2ecc71, #3498db, #9b59b6, #1abc9c);
+}
+body {
+  cursor: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0yNTYgMEMxMTQuNiAwIDAgMTE0LjYgMCAyNTZzMTE0LjYgMjU2IDI1NiAyNTYgMjU2LTExNC42IDI1Ni0yNTZTMzk3LjQgMCAyNTYgMHptMCA0ODBjLTEyMy41IDAtMjI0LTEwMC41LTIyNC0yMjRTMTMyLjUgMzIgMjU2IDMyczIyNCAxMDAuNSAyMjQgMjI0LTEwMC41IDIyNC0yMjQgMjI0eiIvPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0yNTYgMTI4Yy03MC43IDAtMTI4IDU3LjMtMTI4IDEyOHM1Ny4zIDEyOCAxMjggMTI4IDEyOC01Ny4zIDEyOC0xMjgtNTcuMy0xMjgtMTI4LTEyOHptMCAyMDhjLTQ0LjIgMC04MC0zNS44LTgwLTgwczM1LjgtODAgODAtODAgODAgMzUuOCA4MCA4MC0zNS44IDgwLTgwIDgweiIvPjwvc3ZnPg=='), auto;
+}
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animated-gradient {
+  background-size: 400% 400%;
+  animation: gradientAnimation 5000ms ease infinite;
+}
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.navbar {
+  background: linear-gradient(45deg, #27ae60, #2980b9, #8e44ad);
+  background-size: 400% 400%;
+  animation: gradientAnimation 5000ms ease infinite;
+}
+.navbar .nav-link {
+  color: #fff !important;
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.navbar .nav-link:hover {
+  color: #ffdd57 !important;
+  transform: scale(1.1);
+}
+.btn-gradient-primary {
+  background: linear-gradient(45deg, #27ae60, #2980b9, #8e44ad);
+  background-size: 400% 400%;
+  animation: gradientAnimation 5000ms ease infinite;
+  color: #fff;
+  border: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.btn-gradient-primary:hover {
+  background: linear-gradient(45deg, #8e44ad, #2980b9, #27ae60);
+  transform: scale(1.05);
+}
+.card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+}
+.team-member img {
+  border: 5px solid #fff;
+  transition: transform 0.3s ease;
+}
+.team-member img:hover {
+  transform: scale(1.05);
+}
+.feature-icon {
+  display: inline-block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease, background 0.3s ease;
+}
+.feature-icon:hover {
+  transform: scale(1.2) rotate(15deg);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.hero-section {
+  background: linear-gradient(135deg, #2ecc71, #3498db, #9b59b6, #1abc9c);
+  background-size: 400% 400%;
+  animation: gradientAnimation 5000ms ease infinite;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+.hero-section h1,
+.hero-section p {
+  color: #fff;
+}
+#about {
+  background: linear-gradient(135deg, #27ae60, #2980b9, #8e44ad, #1abc9c);
+  background-size: 400% 400%;
+  animation: gradientAnimation 5000ms ease infinite;
+  color: #fff;
+  padding: 80px 0;
+}
+#about .about-overlay {
+  background: rgba(0,0,0,0.5);
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 600px;
+}
+#solutions {
+  background: linear-gradient(135deg, #2980b9, #3498db, #9b59b6, #1abc9c);
+  background-size: 400% 400%;
+  animation: gradientAnimation 5000ms ease infinite;
+  color: #fff;
+  padding: 80px 0;
+}
+.solution-image-container {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #27ae60, #2980b9);
+  padding: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.solution-image-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.solution-image-container:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+#features {
+  background: linear-gradient(135deg, #16a085, #1abc9c, #2ecc71, #2980b9, #3498db);
+  background-size: 400% 400%;
+  animation: gradientAnimation 5000ms ease infinite;
+  color: #fff;
+  padding: 80px 0;
+}
+#testimonials {
+  background: linear-gradient(135deg, #27ae60, #2ecc71, #1abc9c, #2980b9, #3498db);
+  background-size: 400% 400%;
+  animation: gradientAnimation 5000ms ease infinite;
+  color: #fff;
+  padding: 80px 0;
+}
+#pricing {
+  background: linear-gradient(135deg, #27ae60, #2ecc71, #2980b9, #3498db, #8e44ad, #1abc9c);
+  background-size: 400% 400%;
+  animation: gradientAnimation 5000ms ease infinite;
+  color: #fff;
+  padding: 80px 0;
+}
+#team {
+  background: linear-gradient(135deg, #2ecc71, #27ae60, #1abc9c, #3498db, #2980b9);
+  background-size: 400% 400%;
+  animation: gradientAnimation 5000ms ease infinite;
+  color: #fff;
+  padding: 80px 0;
+}
+#blog {
+  background: linear-gradient(135deg, #2980b9, #3498db, #9b59b6, #8e44ad, #1abc9c);
+  background-size: 400% 400%;
+  animation: gradientAnimation 5000ms ease infinite;
+  color: #fff;
+  padding: 80px 0;
+}
+#blog .featured-blog {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#blog .featured-blog:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+#portfolio {
+  background: linear-gradient(135deg, #16a085, #1abc9c, #2ecc71, #27ae60, #2980b9, #3498db);
+  background-size: 400% 400%;
+  animation: gradientAnimation 5000ms ease infinite;
+  color: #fff;
+  padding: 80px 0;
+}
+.portfolio-img-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+.portfolio-img-container img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.portfolio-img-container:hover img {
+  transform: scale(1.05);
+}
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.portfolio-img-container:hover .portfolio-overlay {
+  opacity: 1;
+}
+#faqs {
+  background: linear-gradient(135deg, #27ae60, #2ecc71, #2980b9, #3498db, #8e44ad, #1abc9c);
+  background-size: 400% 400%;
+  animation: gradientAnimation 5000ms ease infinite;
+  color: #fff;
+  padding: 80px 0;
+}
+#newsletter {
+  background: linear-gradient(135deg, #16a085, #1abc9c, #2ecc71, #27ae60, #2980b9);
+  background-size: 400% 400%;
+  animation: gradientAnimation 5000ms ease infinite;
+  color: #fff;
+  padding: 80px 0;
+}
+#contact {
+  background: linear-gradient(135deg, #27ae60, #2ecc71, #2980b9, #3498db, #8e44ad, #1abc9c);
+  background-size: 400% 400%;
+  animation: gradientAnimation 5000ms ease infinite;
+  color: #fff;
+  padding: 80px 0;
+}
+footer {
+  background: linear-gradient(45deg, #1e8449, #27ae60, #2ecc71, #2980b9, #34495e);
+  background-size: 400% 400%;
+  animation: gradientAnimation 5000ms ease infinite;
+  color: #fff;
+  padding: 20px 0;
+}
+img.img-fluid {
+  transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+}
+img.img-fluid:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+}
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #2ecc71, #3498db, #9b59b6, #1abc9c);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeOut 1s ease-in-out 2s forwards;
+}
+.loading-spinner {
+  border: 8px solid #fff;
+  border-top: 8px solid #27ae60;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+.hidden {
+  opacity: 0;
+  transform: translateY(50px);
+}
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    transform: scale(1.05);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.616);
+  }
+}
+.live-text {
+  animation: pulse 0.15ms infinite;
+}
+  </style>
+</head>
+<body >
+  <div class="loading-overlay">
+    <div class="loading-spinner"></div>
+  </div>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top animate__animated animate__fadeInDown">
+  <div class="container">
+    <a class="navbar-brand" href="#" style="font-size: 1.5rem; font-weight: bold;">ARISE</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+        <li class="nav-item"><a class="nav-link" href="#solutions">Solutions</a></li>
+        <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+        <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+        <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+        <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#faqs">FAQs</a></li>
+        <li class="nav-item"><a class="nav-link" href="#newsletter">Newsletter</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+      <button class="btn btn-gradient-primary ms-3">Get Started</button>
+    </div>
+  </div>
+</nav>
+  <section class="hero-section text-center animated-gradient parallax hidden">
+    <div class="hero-content">
+      <h1 class="display-1 rainbow-text animate__animated animate__fadeInDown live-text" style="font-weight: bold;">ARISE</h1>
+      <h1 class="display-4 animate__animated animate__fadeInDown">Revolutionizing the Way You Work</h1>
+      <p class="lead animate__animated animate__fadeInUp">
+        Join thousands of users transforming their businesses with our innovative solutions.
+      </p>
+      <a href="#features" class="btn btn-gradient-primary btn-lg animate__animated animate__bounceIn" 
+         data-title="Our Platform" 
+         data-description="Our platform is designed to revolutionize the way you work. Experience unparalleled efficiency and innovation with our state-of-the-art solutions.">
+        Learn More
+      </a>
+    </div>
+  </section>
+  <section id="about" class="hidden">
+    <div class="container">
+      <h2 class="text-center mb-5 animate__animated animate__fadeIn" style="text-decoration: overline;">About Us</h2>
+      <div class="row">
+        <div class="col-12 position-relative">
+          <img src="au.jpg" alt="About Us" class="img-fluid d-block mx-auto" style="border-radius: 20px; max-width: 900px;">
+          <div class="about-overlay position-absolute top-50 start-50 translate-middle text-center p-4 animate__animated animate__fadeInUp" style="background: rgba(0,0,0,0.5); border-radius: 10px; max-width:800px;">
+            <h3 class="text-white" >Who We Are</h3>
+            <p class="text-white">
+              We are a team of passionate innovators dedicated to creating solutions that make your life easier. Our mission is to empower businesses with cutting-edge technology.
+            </p>
+            <button class="btn btn-gradient-primary btn-modal mt-3" 
+                    data-title="About Our Team" 
+                    data-description="Our team comprises industry experts with decades of combined experience in software development, cloud computing, and innovative technology solutions. We work collaboratively to design and implement reliable, scalable, and secure systems tailored to the unique needs of modern businesses. Our commitment to excellence and customer satisfaction drives us to continuously push the boundaries of what technology can achieve. Whether you are a startup or an established enterprise, we are dedicated to transforming your ideas into reality and helping you stay ahead in a competitive market.">
+              Read More
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="features" class="hidden">
+    <div class="container">
+      <h2 class="text-center mb-5 animate__animated animate__fadeIn" style="font-size: 2.5rem; text-decoration: overline;">Features</h2>
+      <div class="row">
+        <div class="col-md-4 text-center animate__animated animate__fadeInUp">
+          <div class="feature-icon" style="font-size: 3rem;">🚀</div>
+          <h3 style="font-weight: bold;">Fast & Efficient</h3>
+          <p style="font-size: 1.1rem;">Our platform is designed to save you time and boost productivity.</p>
+        </div>
+        <div class="col-md-4 text-center animate__animated animate__fadeInUp animate__delay-1s">
+          <div class="feature-icon" style="font-size: 3rem;">🔒</div>
+          <h3 style="font-weight: bold;">Secure</h3>
+          <p style="font-size: 1.1rem;">We prioritize your data security with cutting-edge technology.</p>
+        </div>
+        <div class="col-md-4 text-center animate__animated animate__fadeInUp animate__delay-2s">
+          <div class="feature-icon" style="font-size: 3rem;">💡</div>
+          <h3 style="font-weight: bold;">Innovative</h3>
+          <p style="font-size: 1.1rem;">Stay ahead with our innovative tools and features.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="solutions" class="hidden">
+    <div class="container">
+      <h2 class="text-center mb-5 animate__animated animate__fadeIn" style="text-decoration: overline;">Solutions</h2>
+      <div class="row align-items-center">
+        <div class="col-md-6 animate__animated animate__lightSpeedInLeft">
+          <h3>Custom Solutions for Your Business</h3>
+          <p>
+            We offer tailored solutions to meet your unique business needs. From startups to enterprises, we’ve got you covered.
+          </p>
+          <ul>
+            <li>Custom Software Development</li>
+            <li>Cloud Integration</li>
+            <li>AI & Machine Learning</li>
+            <li>Data Analytics</li>
+          </ul>
+          <a class="btn btn-gradient-primary" href="#contact">Contact Us</a>
+        </div>
+        <div class="col-md-6 animate__animated animate__fadeInRight">
+          <div class="solution-image-container">
+            <img src="sol.jpg" alt="Solutions">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="testimonials" class="hidden">
+    <div class="container">
+      <h2 class="text-center mb-5 animate__animated animate__fadeIn" style="text-decoration: overline;">What Our Users Say</h2>
+      <div class="row">
+        <div class="col-md-4 animate__animated animate__fadeInLeft">
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text">"This platform has completely transformed my business!"</p>
+              <p class="card-text"><strong>- John Doe</strong></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 animate__animated animate__fadeInUp">
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text">"Highly recommend it to anyone looking for efficiency."</p>
+              <p class="card-text"><strong>- Jane Smith</strong></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 animate__animated animate__fadeInRight">
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text">"The best decision I made for my team!"</p>
+              <p class="card-text"><strong>- Mike Johnson</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<section id="pricing" class="hidden">
+  <div class="container">
+    <h2 class="text-center mb-5 animate__animated animate__fadeIn" style="text-decoration: overline;">Pricing</h2>
+    <div class="row">
+      <div class="col-md-4 animate__animated animate__fadeInLeft">
+        <div class="card text-center">
+          <div class="card-header">
+            <h3>Basic</h3>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Rs.1500/month</h4>
+            <p class="card-text">Perfect for small businesses.</p>
+            <button class="btn btn-gradient-primary btn-modal" 
+                    data-title="Basic Plan" 
+                    data-description="Our Basic Plan, at just Rs.1500/month, is designed for small businesses starting out. It includes a user-friendly dashboard, basic analytics tools, secure data storage, and dedicated email support. This plan provides essential features to manage your business efficiently while keeping costs low.">
+              Get Started
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 animate__animated animate__fadeInUp">
+        <div class="card text-center">
+          <div class="card-header">
+            <h3>Pro</h3>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Rs.4500/month</h4>
+            <p class="card-text">Ideal for growing teams.</p>
+            <button class="btn btn-gradient-primary btn-modal" 
+                    data-title="Pro Plan" 
+                    data-description="Our Pro Plan is priced at Rs.4500/month and is tailored for growing teams. It offers enhanced analytics, advanced integrations, priority support, and scalability options to streamline your operations. This plan is ideal for businesses ready to expand and optimize their performance with more robust features.">
+              Get Started
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 animate__animated animate__fadeInRight">
+        <div class="card text-center">
+          <div class="card-header">
+            <h3>Enterprise</h3>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Rs.9000/month</h4>
+            <p class="card-text">For large organizations.</p>
+            <button class="btn btn-gradient-primary btn-modal" 
+                    data-title="Enterprise Plan" 
+                    data-description="Our Enterprise Plan, at Rs.9000/month, is crafted for large organizations with complex needs. It includes a full suite of advanced features such as custom integrations, 24/7 dedicated support, enhanced security protocols, and performance optimization. This plan ensures robust, scalable, and secure solutions to meet your business's demanding requirements.">
+              Get Started
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="team" class="hidden">
+  <div class="container">
+    <h2 class="text-center mb-5 animate__animated animate__fadeIn" style="text-decoration: overline;">Meet Our Team</h2>
+    <div class="row">
+      <div class="col-md-4 text-center animate__animated animate__fadeInLeft">
+        <div class="team-member">
+          <img src="np1.png" alt="Team Member 1" class="img-fluid rounded mb-3" style="max-width: 220px;">
+          <h4>Adarsh E K</h4>
+          <p>CEO & Founder</p>
+        </div>
+      </div>
+      <div class="col-md-4 text-center animate__animated animate__fadeInUp">
+        <div class="team-member">
+          <img src="np.jpg" alt="Team Member 2" class="img-fluid rounded mb-3" style="max-width: 220px;">
+          <h4>Nivedh Kumaar T</h4>
+          <p>CTO</p>
+        </div>
+      </div>
+      <div class="col-md-4 text-center animate__animated animate__fadeInRight">
+        <div class="team-member">
+          <img src="np2.jpg" alt="Team Member 3" class="img-fluid rounded mb-3" style="max-width: 220px;">
+          <h4>Shyam Prakash M</h4>
+          <p>Lead Developer</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="blog" class="hidden">
+  <div class="container">
+    <h2 class="text-center mb-5 animate__animated animate__fadeIn" style="text-decoration: overline;">Latest from Our Blog</h2>
+    <div class="row">
+      <div class="col-md-8 animate__animated animate__fadeInLeft">
+        <div class="card featured-blog">
+          <img src="prod.png" class="card-img-top" alt="Featured Blog Post">
+          <div class="card-body">
+            <h5 class="card-title">How to Boost Productivity</h5>
+            <p class="card-text">Discover the best tools and strategies to increase your team's productivity.</p>
+            <button class="btn btn-gradient-primary btn-modal" 
+                    data-title="Boost Productivity" 
+                    data-description="Learn how to boost productivity with our innovative strategies and tools designed for modern businesses. In this comprehensive guide, you'll discover actionable insights, practical tips, and proven methods to streamline your processes, improve workflow, and drive overall growth in your organization.">
+              Read More
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4 animate__animated animate__fadeInUp">
+          <img src="fab.png" class="card-img-top" alt="Blog Post 2">
+          <div class="card-body">
+            <h5 class="card-title">The Future of AI in Business</h5>
+            <p class="card-text">Explore how AI is transforming industries and what it means for your business.</p>
+            <button class="btn btn-gradient-primary btn-sm btn-modal" 
+                    data-title="Future of AI" 
+                    data-description="Discover the transformative power of AI in business and its potential to revolutionize industries. This in-depth article explores current trends, future predictions, and actionable strategies for leveraging AI technology to enhance operational efficiency and gain a competitive edge in your market.">
+              Read More
+            </button>
+          </div>
+        </div>
+        <div class="card animate__animated animate__fadeInUp">
+          <img src="ts.png" class="card-img-top" alt="Blog Post 3">
+          <div class="card-body">
+            <h5 class="card-title">Top 10 Tools for Startups</h5>
+            <p class="card-text">A curated list of must-have tools for startups to succeed in 2025.</p>
+            <button class="btn btn-gradient-primary btn-sm btn-modal" 
+                    data-title="Tools for Startups" 
+                    data-description="Check out our top 10 tools curated for startups to help drive success in today's competitive market. Our curated list covers essential software for project management, analytics, marketing, and communication, designed to optimize your operations, boost collaboration, and fuel your startup's growth.">
+              Read More
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <section id="portfolio" class="hidden">
+    <div class="container">
+      <h2 class="text-center mb-5 animate__animated animate__zoomIn" style="text-decoration: overline;">Our Portfolio</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4 animate__animated animate__fadeInUp">
+          <div class="card portfolio-card">
+            <div class="portfolio-img-container">
+              <img src="sha.jpg" class="card-img-top" alt="Smart Home Automation">
+              <div class="portfolio-overlay">
+                <h5>Smart Home Automation</h5>
+                <p class="small">IoT system that automates home functions and enhances security.</p>
+                <button class="btn btn-gradient-primary btn-sm btn-modal" data-title="Smart Home Automation" data-description="Our Smart Home Automation project integrates sensors, voice assistants, and smart devices to provide a secure and convenient home environment.">View Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+          <div class="card portfolio-card">
+            <div class="portfolio-img-container">
+              <img src="apc.png" class="card-img-top" alt="AI-Powered Chatbot">
+              <div class="portfolio-overlay">
+                <h5>AI-Powered Chatbot</h5>
+                <p class="small">NLP-driven system for instant customer support and routine inquiry automation.</p>
+                <button class="btn btn-gradient-primary btn-sm btn-modal" data-title="AI-Powered Chatbot" data-description="Our AI-Powered Chatbot leverages natural language processing to provide fast and effective customer support, reducing response time dramatically.">View Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4 animate__animated animate__fadeInUp animate__delay-2s">
+          <div class="card portfolio-card">
+            <div class="portfolio-img-container">
+              <img src="bvs.png" class="card-img-top" alt="Blockchain Voting System">
+              <div class="portfolio-overlay">
+                <h5>Blockchain Voting System</h5>
+                <p class="small">Secure, transparent e-voting platform using blockchain technology.</p>
+                <button class="btn btn-gradient-primary btn-sm btn-modal" data-title="Blockchain Voting System" data-description="Our Blockchain Voting System ensures transparent and tamper-proof elections by leveraging state-of-the-art blockchain technology.">View Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="faqs" class="hidden">
+    <div class="container">
+      <h2 class="text-center mb-5 animate__animated animate__zoomIn" style="text-decoration: overline;">Frequently Asked Questions</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item animate__animated animate__fadeInUp">
+          <h2 class="accordion-header" id="faqHeadingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne" aria-expanded="true" aria-controls="faqCollapseOne">
+              What services do you offer?
+            </button>
+          </h2>
+          <div id="faqCollapseOne" class="accordion-collapse collapse show" aria-labelledby="faqHeadingOne" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              We offer a wide range of services including custom software development, cloud integration, AI & machine learning, and data analytics.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animate__animated animate__fadeInUp animate__delay-1s">
+          <h2 class="accordion-header" id="faqHeadingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
+              How can your solutions benefit my business?
+            </button>
+          </h2>
+          <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingTwo" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Our solutions are designed to increase efficiency, enhance security, and drive innovation, ensuring your business stays ahead of the curve.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animate__animated animate__fadeInUp animate__delay-2s">
+          <h2 class="accordion-header" id="faqHeadingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
+              Do you offer customer support?
+            </button>
+          </h2>
+          <div id="faqCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqHeadingThree" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Yes, we offer 24/7 customer support to ensure that your issues are resolved promptly.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="newsletter" class="hidden">
+    <div class="container">
+      <h2 class="text-center mb-5 animate__animated animate__zoomIn" style="text-decoration: overline;">Subscribe to Our Newsletter</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6 animate__animated animate__fadeInUp">
+          <form>
+            <div class="mb-3">
+              <label for="newsletterEmail" class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="newsletterEmail" placeholder="Enter your email" required>
+            </div>
+            <button type="submit" class="btn btn-gradient-primary">Subscribe Now</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="hidden">
+    <div class="container">
+      <h2 class="text-center mb-5 animate__animated animate__fadeIn" style="text-decoration: overline;">Contact Us</h2>
+      <div class="row">
+        <div class="col-md-6 animate__animated animate__fadeInLeft">
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-gradient-primary">Submit</button>
+          </form>
+        </div>
+        <div class="col-md-6 animate__animated animate__fadeInRight">
+          <h3>Our Office</h3>
+          <p>Westhill, Kozhikode, Kerala, India</p>
+          <p>Email: info@startup.com</p>
+          <p>Phone: +91 123 456 7890</p>
+          <div class="map-container">
+            <iframe src="https://maps.google.com/maps?q=westhill,%20kozhikode,%20kerala,%20india&output=embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h5>Contact Us</h5>
+          <p>Email: info@startup.com</p>
+          <p>Phone: +91 123 456 7890</p>
+        </div>
+        <div class="col-md-6 text-end">
+          <h5>Follow Us</h5>
+          <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <p class="text-center mt-3">&copy; 2025 Startup. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="scripts.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const sections = document.querySelectorAll("section");
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            entry.target.classList.remove("hidden");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      sections.forEach(section => {
+        section.classList.add("hidden");
+        observer.observe(section);
+      });
+    });
+  </script>
+  <style>
+    .hidden {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    .visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+  </style>
+    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content animated-gradient">
+        <div class="modal-header">
+          <h5 class="modal-title" id="infoModalLabel">Modal Title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Modal description goes here.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-gradient-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      const modalEl = document.getElementById('infoModal');
+      const modalTitle = document.getElementById('infoModalLabel');
+      const modalBody = modalEl.querySelector('.modal-body');
+      const bsModal = new bootstrap.Modal(modalEl);
+      const modalButtons = document.querySelectorAll('.btn-modal');
+      modalButtons.forEach(btn => {
+        btn.addEventListener('click', function(e){
+          e.preventDefault();
+          const title = this.getAttribute('data-title') || "More Information";
+          const description = this.getAttribute('data-description') || "Detailed description goes here.";
+          modalTitle.textContent = title;
+          modalBody.textContent = description;
+          bsModal.show();
+        });
+      });
+    });
+  </script>
+</body>
+</html>
