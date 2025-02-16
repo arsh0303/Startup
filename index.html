@@ -128,9 +128,10 @@ body {
   padding: 80px 0;
 }
 #about .about-overlay {
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   padding: 20px;
+  width: 100%;
   max-width: 600px;
 }
 #solutions {
@@ -331,13 +332,16 @@ img.img-fluid:hover {
 .live-text {
   animation: pulse 2s infinite;
 }
-    @media (max-width: 768px) {
-  #about img.about-img {
-    max-width: 100% !important;
-  }
+@media (max-width: 768px) {
   #about .about-overlay {
-    max-width: 90% !important;
+    width: 90%;
+    max-width: 90%;
     padding: 15px;
+  }
+}
+@media (max-width: 768px) {
+  #about .about-img {
+    max-width: 100% !important;
   }
 }
 
@@ -385,27 +389,28 @@ img.img-fluid:hover {
       </a>
     </div>
   </section>
-<section id="about" class="hidden">
-  <div class="container">
-    <h2 class="text-center mb-5 animate__animated animate__fadeIn" style="text-decoration: overline;">About Us</h2>
-    <div class="row">
-      <div class="col-12 position-relative">
-        <img src="au.jpg" alt="About Us" class="img-fluid d-block mx-auto about-img" style="border-radius: 20px; max-width: 900px;">
-        <div class="about-overlay position-absolute top-50 start-50 translate-middle text-center p-4 animate__animated animate__fadeInUp" style="background: rgba(0,0,0,0.5); border-radius: 10px; max-width:800px;">
-          <h3 class="text-white">Who We Are</h3>
-          <p class="text-white">
-            We are a team of passionate innovators dedicated to creating solutions that make your life easier. Our mission is to empower businesses with cutting-edge technology.
-          </p>
-          <button class="btn btn-gradient-primary btn-modal mt-3" 
-                  data-title="About Our Team" 
-                  data-description="Our team comprises industry experts with decades of combined experience in software development, cloud computing, and innovative technology solutions. We work collaboratively to design and implement reliable, scalable, and secure systems tailored to the unique needs of modern businesses. Our commitment to excellence and customer satisfaction drives us to continuously push the boundaries of what technology can achieve. Whether you are a startup or an established enterprise, we are dedicated to transforming your ideas into reality and helping you stay ahead in a competitive market.">
-            Read More
-          </button>
+  <section id="about" class="hidden">
+    <div class="container">
+      <h2 class="text-center mb-5 animate__animated animate__fadeIn" style="text-decoration: overline;">About Us</h2>
+      <div class="row">
+        <div class="col-12 position-relative">
+          <img src="au.jpg" alt="About Us" class="img-fluid d-block mx-auto about-img" style="border-radius: 20px; max-width: 900px;">
+          <div class="about-overlay position-absolute top-50 start-50 translate-middle text-center p-4 animate__animated animate__fadeInUp">
+            <h3 class="text-white">Who We Are</h3>
+            <p class="text-white">
+              We are a team of passionate innovators dedicated to creating solutions that make your life easier. Our mission is to empower businesses with cutting-edge technology.
+            </p>
+            <button class="btn btn-gradient-primary btn-modal mt-3" 
+                    data-title="About Our Team" 
+                    data-description="Our team comprises industry experts with decades of combined experience in software development, cloud computing, and innovative technology solutions. We work collaboratively to design and implement reliable, scalable, and secure systems tailored to the unique needs of modern businesses. Our commitment to excellence and customer satisfaction drives us to continuously push the boundaries of what technology can achieve. Whether you are a startup or an established enterprise, we are dedicated to transforming your ideas into reality and helping you stay ahead in a competitive market.">
+              Read More
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+  
   <section id="features" class="hidden">
     <div class="container">
       <h2 class="text-center mb-5 animate__animated animate__fadeIn" style="font-size: 2.5rem; text-decoration: overline;">Features</h2>
