@@ -344,6 +344,32 @@ img.img-fluid:hover {
     max-width: 100% !important;
   }
 }
+.about-img {
+  border-radius: 20px;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+}
+@keyframes subtleZoomPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.blog-img {
+  animation: subtleZoomPulse 6s infinite ease-in-out;
+}
+@media (max-width: 768px) {
+  #blog .card {
+    margin: 0 auto;
+    max-width: 90%;
+  }
+}
 
   </style>
 </head>
@@ -394,7 +420,7 @@ img.img-fluid:hover {
       <h2 class="text-center mb-5 animate__animated animate__fadeIn" style="text-decoration: overline;">About Us</h2>
       <div class="row">
         <div class="col-12 position-relative">
-          <img src="au.jpg" alt="About Us" class="img-fluid d-block mx-auto about-img" style="border-radius: 20px; max-width: 900px;">
+          <img src="au.jpg" alt="About Us" class="img-fluid d-block mx-auto about-img">
           <div class="about-overlay position-absolute top-50 start-50 translate-middle text-center p-4 animate__animated animate__fadeInUp">
             <h3 class="text-white">Who We Are</h3>
             <p class="text-white">
@@ -576,9 +602,9 @@ img.img-fluid:hover {
   <div class="container">
     <h2 class="text-center mb-5 animate__animated animate__fadeIn" style="text-decoration: overline;">Latest from Our Blog</h2>
     <div class="row">
-      <div class="col-md-8 animate__animated animate__fadeInLeft">
+      <div class="col-md-12 animate__animated animate__fadeInDown">
         <div class="card featured-blog">
-          <img src="prod.png" class="card-img-top" alt="Featured Blog Post">
+          <img src="prod.png" class="card-img-top blog-img" alt="Featured Blog Post">
           <div class="card-body">
             <h5 class="card-title">How to Boost Productivity</h5>
             <p class="card-text">Discover the best tools and strategies to increase your team's productivity.</p>
@@ -590,9 +616,11 @@ img.img-fluid:hover {
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card mb-4 animate__animated animate__fadeInUp">
-          <img src="fab.png" class="card-img-top" alt="Blog Post 2">
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-6 animate__animated animate__fadeInUp">
+        <div class="card mb-4">
+          <img src="fab.png" class="card-img-top blog-img" alt="Blog Post 2">
           <div class="card-body">
             <h5 class="card-title">The Future of AI in Business</h5>
             <p class="card-text">Explore how AI is transforming industries and what it means for your business.</p>
@@ -603,8 +631,10 @@ img.img-fluid:hover {
             </button>
           </div>
         </div>
-        <div class="card animate__animated animate__fadeInUp">
-          <img src="ts.png" class="card-img-top" alt="Blog Post 3">
+      </div>
+      <div class="col-md-6 animate__animated animate__fadeInUp">
+        <div class="card">
+          <img src="ts.png" class="card-img-top blog-img" alt="Blog Post 3">
           <div class="card-body">
             <h5 class="card-title">Top 10 Tools for Startups</h5>
             <p class="card-text">A curated list of must-have tools for startups to succeed in 2025.</p>
@@ -619,6 +649,7 @@ img.img-fluid:hover {
     </div>
   </div>
 </section>
+
   <section id="portfolio" class="hidden">
     <div class="container">
       <h2 class="text-center mb-5 animate__animated animate__zoomIn" style="text-decoration: overline;">Our Portfolio</h2>
